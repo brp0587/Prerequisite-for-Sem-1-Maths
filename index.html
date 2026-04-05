@@ -34,42 +34,302 @@
             --border-color: #E5E7EB;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
-        .gujarati { font-family: 'Noto Sans Gujarati', sans-serif; color: var(--gujarati-color); font-size: 0.95em; display: block; margin-top: 0.2rem; }
-        .inline-gu { font-family: 'Noto Sans Gujarati', sans-serif; color: var(--gujarati-color); font-size: 0.95em; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 3rem 1rem; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        header .gujarati { color: #D1FAE5; font-size: 1.2rem; }
-        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
-        .topic-card { background: var(--card-bg); border-radius: 12px; padding: 2.5rem; margin-bottom: 2.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid var(--primary); }
-        .topic-title { color: var(--primary); font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--bg); padding-bottom: 0.8rem; font-weight: 700; }
-        .section-heading { font-weight: 700; margin-top: 1.5rem; color: var(--text-main); font-size: 1.1rem; }
-        .formula-box { background: #EEF2FF; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; text-align: center; font-size: 1.2rem; overflow-x: auto; border: 1px dashed var(--primary-light); }
-        details { background: white; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; }
-        summary { padding: 1.2rem; cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; background: #F9FAFB; }
-        summary::-webkit-details-marker { display: none; }
-        summary::after { content: '+'; font-size: 1.5rem; color: var(--primary); font-weight: bold; }
-        details[open] summary::after { content: '-'; }
-        .example-content { padding: 1.5rem; border-top: 1px solid var(--border-color); }
-        .step-block { background: var(--step-bg); padding: 1rem; margin-bottom: 0.8rem; border-left: 4px solid var(--secondary); border-radius: 0 6px 6px 0; }
-        .step-math { text-align: center; margin: 0.8rem 0; font-size: 1.2em; color: var(--primary); overflow-x: auto; }
-        .lab-section { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: 4rem; border-top: 6px solid var(--secondary); }
-        .lab-controls { display: flex; flex-direction: column; gap: 1.5rem; margin: 2rem 0; background: #F8FAFC; padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); }
-        label { font-weight: 600; display: block; margin-bottom: 0.5rem; }
-        select, input { padding: 0.8rem; border: 1px solid #D1D5DB; border-radius: 6px; font-family: inherit; font-size: 1rem; }
-        select { width: 100%; max-width: 600px; }
-        .input-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
-        .eq-row { background: white; padding: 1rem; border-radius: 6px; border: 1px solid #E5E7EB; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; width: 100%; }
-        button { background: var(--primary); color: white; border: none; padding: 1rem 2rem; font-size: 1.1rem; border-radius: 6px; cursor: pointer; font-weight: bold; align-self: flex-start; }
-        button:hover { background: var(--primary-light); }
-        #lab-output { background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--primary-light); min-height: 150px; margin-top: 1rem; font-size: 1.05rem; overflow-x: auto; }
-        .calc-step { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px dashed #E5E7EB; }
-        .calc-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        footer { background: var(--text-main); color: white; padding: 2rem; margin-top: 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-        .counter { background: rgba(255,255,255,0.1); padding: 0.8rem 1.5rem; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); }
-        .copyright { text-align: right; font-size: 0.95rem; }
-        @media (max-width: 768px) { header h1 { font-size: 1.8rem; } .input-grid { flex-direction: column; align-items: stretch; } footer { flex-direction: column; text-align: center; } .copyright { text-align: center; } }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .gujarati {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            color: var(--gujarati-color);
+            font-size: 0.95em;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .inline-gu {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            color: var(--gujarati-color);
+            font-size: 0.95em;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header .gujarati {
+            color: #D1FAE5;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Chapter Sections */
+        .topic-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .topic-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--bg);
+            padding-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .section-heading {
+            font-weight: 700;
+            margin-top: 1.5rem;
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .formula-box {
+            background: #EEF2FF;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+            overflow-x: auto;
+            border: 1px dashed var(--primary-light);
+        }
+
+        /* Examples Accordion */
+        details {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #F9FAFB;
+            transition: background 0.2s ease;
+        }
+
+        summary:hover {
+            background: #F3F4F6;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .example-content {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .step-block {
+            background: var(--step-bg);
+            padding: 1rem;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .step-math {
+            text-align: center;
+            margin: 0.8rem 0;
+            font-size: 1.1em;
+            color: var(--primary);
+            overflow-x: auto;
+        }
+
+        /* Interactive Lab */
+        .lab-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 4rem;
+            border-top: 6px solid var(--secondary);
+        }
+
+        .lab-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            background: #F8FAFC;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        select, input[type="number"], input[type="text"] {
+            padding: 0.8rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        select {
+            background-color: white;
+            cursor: pointer;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .input-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .eq-row {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #E5E7EB;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: bold;
+            align-self: flex-start;
+        }
+
+        button:hover {
+            background: var(--primary-light);
+        }
+
+        #lab-output {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--primary-light);
+            min-height: 150px;
+            margin-top: 1rem;
+            font-size: 1.05rem;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            overflow-x: auto;
+        }
+
+        .calc-step {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #E5E7EB;
+        }
+        .calc-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: white;
+            padding: 2rem;
+            margin-top: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .counter {
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .copyright {
+            text-align: right;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .topic-card { padding: 1.5rem; }
+            .input-grid { flex-direction: column; align-items: stretch; }
+            footer { flex-direction: column; text-align: center; }
+            .copyright { text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -81,12 +341,16 @@
         <span class="gujarati">ઇન્ટરેક્ટિવ સ્ટડી ગાઈડ અને પગલાવાર લેબ</span>
     </header>
 
-    <div class="container" id="content-container"></div>
+    <div class="container" id="content-container">
+        </div>
 
     <div class="container">
         <div class="lab-section">
             <h2 class="topic-title" style="border-bottom: none; margin-bottom: 0;">Interactive Mathematics Lab</h2>
             <span class="gujarati" style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; display: block; font-weight: bold; border-bottom: 2px solid var(--bg); padding-bottom: 0.8rem;">ઇન્ટરેક્ટિવ ગણિત લેબ</span>
+            
+            <p>Select a topic tool, input your values, and generate detailed step-by-step solutions!</p>
+            <span class="gujarati">વિષય સાધન પસંદ કરો, તમારી કિંમતો દાખલ કરો અને વિગતવાર પગલાવાર ઉકેલો મેળવો!</span>
             
             <div class="lab-controls">
                 <div>
@@ -102,76 +366,136 @@
                         <option value="sets">8. Concept of Set Operations (ગણ ક્રિયાઓનો ખ્યાલ)</option>
                     </select>
                 </div>
-                <div id="dynamic-inputs" class="input-grid"></div>
+
+                <div id="dynamic-inputs" class="input-grid">
+                    </div>
+
                 <button onclick="calculateLab()">Solve Step-by-Step <br><span style="font-size: 0.85em; font-weight: normal;">પગલાવાર ઉકેલો</span></button>
             </div>
-            <div id="lab-output"><em>Select a tool and click solve to see the detailed step-by-step solution here.</em></div>
+
+            <div id="lab-output">
+                <em>Select a tool and click solve to see the detailed step-by-step solution here.<br><span class="inline-gu">સાધન પસંદ કરો અને વિગતવાર પગલાવાર ઉકેલ જોવા માટે ઉકેલો પર ક્લિક કરો.</span></em>
+            </div>
         </div>
     </div>
 
     <footer>
-        <div class="counter">Page Visits / પૃષ્ઠ મુલાકાતો: <strong id="count">0</strong></div>
-        <div class="copyright">&copy; 2026 Prepared by <strong>Bhavin R Patel</strong><br><span style="color: #9CA3AF; font-size: 0.9em;">Lecturer in Mathematics</span><br><span class="gujarati" style="color: #9CA3AF;">ગણિત વ્યાખ્યાતા, ભવિન આર. પટેલ દ્વારા તૈયાર</span></div>
+        <div class="counter" id="visit-counter">
+            Page Visits / પૃષ્ઠ મુલાકાતો: <strong id="count">0</strong>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Prepared by <strong>Bhavin R Patel</strong><br>
+            <span style="color: #9CA3AF; font-size: 0.9em;">Lecturer in Mathematics</span><br>
+            <span class="gujarati" style="color: #9CA3AF;">ગણિત વ્યાખ્યાતા, ભવિન આર. પટેલ દ્વારા તૈયાર</span>
+        </div>
     </footer>
 
     <script>
-        // CRITICAL FIX: All mathematical formulas use \\\\ to ensure backslashes survive into the HTML for MathJax.
+        // --- 1. DATA STRUCTURE WITH FULL 48 EXAMPLES & PROPER ESCAPING ---
         const topicsData = [
             {
                 title_en: "Linear Equation in Two Variables", title_gu: "દ્વિચલ સુરેખ સમીકરણો",
                 def_en: "An equation containing two variables where the highest power of each variable is 1.", def_gu: "એક સમીકરણ જેમાં બે ચલ હોય અને દરેક ચલની મહત્તમ ઘાત 1 હોય.",
-                formula: "$$a_1x + b_1y = c_1 \\\\quad \\\\text{and} \\\\quad a_2x + b_2y = c_2$$",
+                formula: "$$a_1x + b_1y = c_1 \\quad \\text{and} \\quad a_2x + b_2y = c_2$$",
                 app_en: "Calculating costs when buying two different items with a fixed budget.", app_gu: "ચોક્કસ બજેટ સાથે બે અલગ અલગ વસ્તુઓ ખરીદતી વખતે કિંમતની ગણતરી કરવી.",
                 examples: [
-                    { q_en: "Solve: \\\\(x + y = 5\\\\) and \\\\(x - y = 1\\\\)", q_gu: "ઉકેલો: \\\\(x + y = 5\\\\) અને \\\\(x - y = 1\\\\)",
-                      steps: [{ en: "Add both equations.", gu: "બંને સમીકરણોનો સરવાળો કરો.", math: "(x + y) + (x - y) = 5 + 1" },
-                              { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "2x = 6 \\\\implies x = 3" },
-                              { en: "Substitute x=3 in first equation.", gu: "પ્રથમ સમીકરણમાં x=3 મૂકો.", math: "3 + y = 5 \\\\implies y = 2" }] },
-                    { q_en: "Solve: \\\\(2x + y = 7\\\\) and \\\\(x - y = 2\\\\)", q_gu: "ઉકેલો: \\\\(2x + y = 7\\\\) અને \\\\(x - y = 2\\\\)",
-                      steps: [{ en: "Add the equations.", gu: "સમીકરણોનો સરવાળો કરો.", math: "(2x + y) + (x - y) = 7 + 2" },
-                              { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "3x = 9 \\\\implies x = 3" },
-                              { en: "Substitute x=3.", gu: "x=3 મૂકો.", math: "2(3) + y = 7 \\\\implies y = 1" }] },
-                    { q_en: "Solve: \\\\(3x + 2y = 12\\\\) given \\\\(x = 2\\\\)", q_gu: "ઉકેલો: \\\\(3x + 2y = 12\\\\) આપેલ છે \\\\(x = 2\\\\)",
-                      steps: [{ en: "Substitute x=2.", gu: "x=2 મૂકો.", math: "3(2) + 2y = 12" },
-                              { en: "Multiply terms.", gu: "પદોનો ગુણાકાર કરો.", math: "6 + 2y = 12" },
-                              { en: "Solve for y.", gu: "y માટે ઉકેલો.", math: "2y = 6 \\\\implies y = 3" }] },
-                    { q_en: "Solve: \\\\(y = x + 2\\\\) and \\\\(2x + y = 8\\\\)", q_gu: "ઉકેલો: \\\\(y = x + 2\\\\) અને \\\\(2x + y = 8\\\\)",
-                      steps: [{ en: "Substitute y in the second equation.", gu: "બીજા સમીકરણમાં y ની કિંમત મૂકો.", math: "2x + (x + 2) = 8" },
-                              { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "3x + 2 = 8 \\\\implies 3x = 6 \\\\implies x = 2" },
-                              { en: "Find y.", gu: "y શોધો.", math: "y = 2 + 2 \\\\implies y = 4" }] },
-                    { q_en: "Solve: \\\\(4x - 3y = 5\\\\) given \\\\(y = 1\\\\)", q_gu: "ઉકેલો: \\\\(4x - 3y = 5\\\\) આપેલ છે \\\\(y = 1\\\\)",
-                      steps: [{ en: "Substitute y=1.", gu: "y=1 મૂકો.", math: "4x - 3(1) = 5" },
-                              { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "4x = 5 + 3 \\\\implies 4x = 8 \\\\implies x = 2" }] },
-                    { q_en: "Solve: \\\\(x + 2y = 10\\\\) and \\\\(x = y + 1\\\\)", q_gu: "ઉકેલો: \\\\(x + 2y = 10\\\\) અને \\\\(x = y + 1\\\\)",
-                      steps: [{ en: "Substitute x.", gu: "x ની કિંમત મૂકો.", math: "(y + 1) + 2y = 10" },
-                              { en: "Solve for y.", gu: "y માટે ઉકેલો.", math: "3y + 1 = 10 \\\\implies y = 3" },
-                              { en: "Find x.", gu: "x શોધો.", math: "x = 3 + 1 \\\\implies x = 4" }] }
+                    {
+                        q_en: "Solve: \\(x + y = 5\\) and \\(x - y = 1\\)", q_gu: "ઉકેલો: \\(x + y = 5\\) અને \\(x - y = 1\\)",
+                        steps: [
+                            { en: "Add both equations.", gu: "બંને સમીકરણોનો સરવાળો કરો.", math: "(x + y) + (x - y) = 5 + 1" },
+                            { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "2x = 6 \\implies x = 3" },
+                            { en: "Substitute x=3 in first equation.", gu: "પ્રથમ સમીકરણમાં x=3 મૂકો.", math: "3 + y = 5 \\implies y = 2" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(2x + y = 7\\) and \\(x - y = 2\\)", q_gu: "ઉકેલો: \\(2x + y = 7\\) અને \\(x - y = 2\\)",
+                        steps: [
+                            { en: "Add the equations.", gu: "સમીકરણોનો સરવાળો કરો.", math: "(2x + y) + (x - y) = 7 + 2" },
+                            { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "3x = 9 \\implies x = 3" },
+                            { en: "Substitute x=3.", gu: "x=3 મૂકો.", math: "2(3) + y = 7 \\implies y = 1" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(3x + 2y = 12\\) given \\(x = 2\\)", q_gu: "ઉકેલો: \\(3x + 2y = 12\\) આપેલ છે \\(x = 2\\)",
+                        steps: [
+                            { en: "Substitute x=2.", gu: "x=2 મૂકો.", math: "3(2) + 2y = 12" },
+                            { en: "Multiply terms.", gu: "પદોનો ગુણાકાર કરો.", math: "6 + 2y = 12" },
+                            { en: "Solve for y.", gu: "y માટે ઉકેલો.", math: "2y = 6 \\implies y = 3" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(y = x + 2\\) and \\(2x + y = 8\\)", q_gu: "ઉકેલો: \\(y = x + 2\\) અને \\(2x + y = 8\\)",
+                        steps: [
+                            { en: "Substitute y in the second equation.", gu: "બીજા સમીકરણમાં y ની કિંમત મૂકો.", math: "2x + (x + 2) = 8" },
+                            { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "3x + 2 = 8 \\implies 3x = 6 \\implies x = 2" },
+                            { en: "Find y.", gu: "y શોધો.", math: "y = 2 + 2 \\implies y = 4" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(4x - 3y = 5\\) given \\(y = 1\\)", q_gu: "ઉકેલો: \\(4x - 3y = 5\\) આપેલ છે \\(y = 1\\)",
+                        steps: [
+                            { en: "Substitute y=1.", gu: "y=1 મૂકો.", math: "4x - 3(1) = 5" },
+                            { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "4x = 5 + 3 \\implies 4x = 8 \\implies x = 2" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(x + 2y = 10\\) and \\(x = y + 1\\)", q_gu: "ઉકેલો: \\(x + 2y = 10\\) અને \\(x = y + 1\\)",
+                        steps: [
+                            { en: "Substitute x.", gu: "x ની કિંમત મૂકો.", math: "(y + 1) + 2y = 10" },
+                            { en: "Solve for y.", gu: "y માટે ઉકેલો.", math: "3y + 1 = 10 \\implies y = 3" },
+                            { en: "Find x.", gu: "x શોધો.", math: "x = 3 + 1 \\implies x = 4" }
+                        ]
+                    }
                 ]
             },
             {
                 title_en: "Factorization", title_gu: "અવયવીકરણ",
                 def_en: "Breaking down a mathematical expression into simpler factors.", def_gu: "ગાણિતિક પદાવલિને સરળ અવયવોમાં વિભાજિત કરવી.",
-                formula: "$$x^2 + (a+b)x + ab = (x+a)(x+b) \\\\quad , \\\\quad a^2 - b^2 = (a-b)(a+b)$$",
+                formula: "$$x^2 + (a+b)x + ab = (x+a)(x+b) \\quad , \\quad a^2 - b^2 = (a-b)(a+b)$$",
                 app_en: "Simplifying complex area formulas.", app_gu: "જટિલ ક્ષેત્રફળના સૂત્રોને સરળ બનાવવા.",
                 examples: [
-                    { q_en: "Factorize: \\\\(x^2 - 9\\\\)", q_gu: "અવયવ પાડો: \\\\(x^2 - 9\\\\)",
-                      steps: [{ en: "Difference of squares.", gu: "બે વર્ગોનો તફાવત.", math: "x^2 - 3^2" },
-                              { en: "Apply formula.", gu: "સૂત્ર લાગુ કરો.", math: "(x - 3)(x + 3)" }] },
-                    { q_en: "Factorize: \\\\(x^2 + 5x + 6\\\\)", q_gu: "અવયવ પાડો: \\\\(x^2 + 5x + 6\\\\)",
-                      steps: [{ en: "Numbers that multiply to 6 and add to 5.", gu: "ગુણાકાર 6 અને સરવાળો 5.", math: "2 \\\\times 3 = 6, 2 + 3 = 5" },
-                              { en: "Write factors.", gu: "અવયવો લખો.", math: "(x + 2)(x + 3)" }] },
-                    { q_en: "Factorize: \\\\(2x^2 + 4x\\\\)", q_gu: "અવયવ પાડો: \\\\(2x^2 + 4x\\\\)",
-                      steps: [{ en: "Find common factor.", gu: "સામાન્ય અવયવ શોધો.", math: "2x(x) + 2x(2)" },
-                              { en: "Extract common factor.", gu: "સામાન્ય અવયવ બહાર કાઢો.", math: "2x(x + 2)" }] },
-                    { q_en: "Factorize: \\\\(x^2 - 7x + 12\\\\)", q_gu: "અવયવ પાડો: \\\\(x^2 - 7x + 12\\\\)",
-                      steps: [{ en: "Numbers that multiply to 12 and add to -7.", gu: "ગુણાકાર 12 અને સરવાળો -7.", math: "(-3) \\\\times (-4) = 12" },
-                              { en: "Write factors.", gu: "અવયવો લખો.", math: "(x - 3)(x - 4)" }] },
-                    { q_en: "Factorize: \\\\(y^2 - 25\\\\)", q_gu: "અવયવ પાડો: \\\\(y^2 - 25\\\\)",
-                      steps: [{ en: "Difference of squares.", gu: "બે વર્ગોનો તફાવત.", math: "y^2 - 5^2" },
-                              { en: "Apply formula.", gu: "સૂત્ર લાગુ કરો.", math: "(y - 5)(y + 5)" }] },
-                    { q_en: "Factorize: \\\\(x^2 + 6x + 9\\\\)", q_gu: "અવયવ પાડો: \\\\(x^2 + 6x + 9\\\\)",
-                      steps: [{ en: "Perfect square trinomial.", gu: "પૂર્ણ વર્ગ ત્રિપદી.", math: "(x)^2 + 2(x)(3) + 3^2" },
-                              { en: "Apply formula.", gu: "સૂત્ર લાગુ કરો.", math: "(x + 3)^2" }] }
+                    {
+                        q_en: "Factorize: \\(x^2 - 9\\)", q_gu: "અવયવ પાડો: \\(x^2 - 9\\)",
+                        steps: [
+                            { en: "Difference of squares.", gu: "બે વર્ગોનો તફાવત.", math: "x^2 - 3^2" },
+                            { en: "Apply formula.", gu: "સૂત્ર લાગુ કરો.", math: "(x - 3)(x + 3)" }
+                        ]
+                    },
+                    {
+                        q_en: "Factorize: \\(x^2 + 5x + 6\\)", q_gu: "અવયવ પાડો: \\(x^2 + 5x + 6\\)",
+                        steps: [
+                            { en: "Numbers that multiply to 6 and add to 5.", gu: "ગુણાકાર 6 અને સરવાળો 5.", math: "2 \\times 3 = 6, 2 + 3 = 5" },
+                            { en: "Write factors.", gu: "અવયવો લખો.", math: "(x + 2)(x + 3)" }
+                        ]
+                    },
+                    {
+                        q_en: "Factorize: \\(2x^2 + 4x\\)", q_gu: "અવયવ પાડો: \\(2x^2 + 4x\\)",
+                        steps: [
+                            { en: "Find common factor.", gu: "સામાન્ય અવયવ શોધો.", math: "2x(x) + 2x(2)" },
+                            { en: "Extract common factor.", gu: "સામાન્ય અવયવ બહાર કાઢો.", math: "2x(x + 2)" }
+                        ]
+                    },
+                    {
+                        q_en: "Factorize: \\(x^2 - 7x + 12\\)", q_gu: "અવયવ પાડો: \\(x^2 - 7x + 12\\)",
+                        steps: [
+                            { en: "Numbers that multiply to 12 and add to -7.", gu: "ગુણાકાર 12 અને સરવાળો -7.", math: "(-3) \\times (-4) = 12" },
+                            { en: "Write factors.", gu: "અવયવો લખો.", math: "(x - 3)(x - 4)" }
+                        ]
+                    },
+                    {
+                        q_en: "Factorize: \\(y^2 - 25\\)", q_gu: "અવયવ પાડો: \\(y^2 - 25\\)",
+                        steps: [
+                            { en: "Difference of squares.", gu: "બે વર્ગોનો તફાવત.", math: "y^2 - 5^2" },
+                            { en: "Apply formula.", gu: "સૂત્ર લાગુ કરો.", math: "(y - 5)(y + 5)" }
+                        ]
+                    },
+                    {
+                        q_en: "Factorize: \\(x^2 + 6x + 9\\)", q_gu: "અવયવ પાડો: \\(x^2 + 6x + 9\\)",
+                        steps: [
+                            { en: "Perfect square trinomial.", gu: "પૂર્ણ વર્ગ ત્રિપદી.", math: "(x)^2 + 2(x)(3) + 3^2" },
+                            { en: "Apply formula.", gu: "સૂત્ર લાગુ કરો.", math: "(x + 3)^2" }
+                        ]
+                    }
                 ]
             },
             {
@@ -180,154 +504,300 @@
                 formula: "$$P(x) = ax^2 + bx + c$$",
                 app_en: "Predicting trends and creating graphical models.", app_gu: "વલણોની આગાહી અને ગ્રાફિકલ મોડેલ બનાવવા.",
                 examples: [
-                    { q_en: "Find \\\\(P(2)\\\\) for \\\\(P(x) = x^2 - 3x + 2\\\\)", q_gu: "\\\\(P(x) = x^2 - 3x + 2\\\\) માટે \\\\(P(2)\\\\) શોધો",
-                      steps: [{ en: "Substitute x=2.", gu: "x=2 મૂકો.", math: "P(2) = (2)^2 - 3(2) + 2" },
-                              { en: "Calculate result.", gu: "પરિણામ ગણો.", math: "4 - 6 + 2 = 0" }] },
-                    { q_en: "Degree of \\\\(4x^3 + 2x - 7\\\\)", q_gu: "\\\\(4x^3 + 2x - 7\\\\) ની ઘાત",
-                      steps: [{ en: "Identify highest exponent.", gu: "મહત્તમ ઘાતાંક ઓળખો.", math: "\\\\text{Highest exponent is 3}" },
-                              { en: "State degree.", gu: "ઘાત જણાવો.", math: "\\\\text{Degree} = 3" }] },
-                    { q_en: "Add: \\\\((x^2 + 2x) + (3x^2 - x)\\\\)", q_gu: "સરવાળો: \\\\((x^2 + 2x) + (3x^2 - x)\\\\)",
-                      steps: [{ en: "Group like terms.", gu: "સમાન પદો ભેગા કરો.", math: "(x^2 + 3x^2) + (2x - x)" },
-                              { en: "Combine coefficients.", gu: "સહગુણકો ભેગા કરો.", math: "4x^2 + x" }] },
-                    { q_en: "Find root: \\\\(2x - 4 = 0\\\\)", q_gu: "બીજ શોધો: \\\\(2x - 4 = 0\\\\)",
-                      steps: [{ en: "Isolate x.", gu: "x ને અલગ કરો.", math: "2x = 4" },
-                              { en: "Divide.", gu: "ભાગો.", math: "x = \\\\frac{4}{2} \\\\implies x = 2" }] },
-                    { q_en: "Evaluate \\\\(P(0)\\\\) for \\\\(P(x) = 5x^4 - x^2 + 9\\\\)", q_gu: "\\\\(P(0)\\\\) શોધો",
-                      steps: [{ en: "Substitute x=0.", gu: "x=0 મૂકો.", math: "5(0)^4 - 0^2 + 9" },
-                              { en: "Result.", gu: "પરિણામ.", math: "9" }] },
-                    { q_en: "Subtract: \\\\((5x - 3) - (2x + 1)\\\\)", q_gu: "બાદબાકી: \\\\((5x - 3) - (2x + 1)\\\\)",
-                      steps: [{ en: "Distribute negative sign.", gu: "ઋણ ચિન્હ લાગુ કરો.", math: "5x - 3 - 2x - 1" },
-                              { en: "Combine.", gu: "ભેગા કરો.", math: "3x - 4" }] }
+                    {
+                        q_en: "Find \\(P(2)\\) for \\(P(x) = x^2 - 3x + 2\\)", q_gu: "\\(P(x) = x^2 - 3x + 2\\) માટે \\(P(2)\\) શોધો",
+                        steps: [
+                            { en: "Substitute x=2.", gu: "x=2 મૂકો.", math: "P(2) = (2)^2 - 3(2) + 2" },
+                            { en: "Calculate result.", gu: "પરિણામ ગણો.", math: "4 - 6 + 2 = 0" }
+                        ]
+                    },
+                    {
+                        q_en: "Degree of \\(4x^3 + 2x - 7\\)", q_gu: "\\(4x^3 + 2x - 7\\) ની ઘાત",
+                        steps: [
+                            { en: "Identify highest exponent.", gu: "મહત્તમ ઘાતાંક ઓળખો.", math: "\\text{Highest exponent is 3}" },
+                            { en: "State degree.", gu: "ઘાત જણાવો.", math: "\\text{Degree} = 3" }
+                        ]
+                    },
+                    {
+                        q_en: "Add: \\((x^2 + 2x) + (3x^2 - x)\\)", q_gu: "સરવાળો: \\((x^2 + 2x) + (3x^2 - x)\\)",
+                        steps: [
+                            { en: "Group like terms.", gu: "સમાન પદો ભેગા કરો.", math: "(x^2 + 3x^2) + (2x - x)" },
+                            { en: "Combine coefficients.", gu: "સહગુણકો ભેગા કરો.", math: "4x^2 + x" }
+                        ]
+                    },
+                    {
+                        q_en: "Find root: \\(2x - 4 = 0\\)", q_gu: "બીજ શોધો: \\(2x - 4 = 0\\)",
+                        steps: [
+                            { en: "Isolate x.", gu: "x ને અલગ કરો.", math: "2x = 4" },
+                            { en: "Divide.", gu: "ભાગો.", math: "x = \\frac{4}{2} \\implies x = 2" }
+                        ]
+                    },
+                    {
+                        q_en: "Evaluate \\(P(0)\\) for \\(P(x) = 5x^4 - x^2 + 9\\)", q_gu: "\\(P(0)\\) શોધો",
+                        steps: [
+                            { en: "Substitute x=0.", gu: "x=0 મૂકો.", math: "5(0)^4 - 0^2 + 9" },
+                            { en: "Result.", gu: "પરિણામ.", math: "9" }
+                        ]
+                    },
+                    {
+                        q_en: "Subtract: \\((5x - 3) - (2x + 1)\\)", q_gu: "બાદબાકી: \\((5x - 3) - (2x + 1)\\)",
+                        steps: [
+                            { en: "Distribute negative sign.", gu: "ઋણ ચિન્હ લાગુ કરો.", math: "5x - 3 - 2x - 1" },
+                            { en: "Combine.", gu: "ભેગા કરો.", math: "3x - 4" }
+                        ]
+                    }
                 ]
             },
             {
                 title_en: "Quadratic Equation", title_gu: "દ્વિઘાત સમીકરણ",
                 def_en: "A second-degree polynomial equation.", def_gu: "દ્વિઘાત બહુપદી સમીકરણ.",
-                formula: "$$x = \\\\frac{-b \\\\pm \\\\sqrt{b^2 - 4ac}}{2a}$$",
+                formula: "$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
                 app_en: "Calculating projectile motion paths.", app_gu: "પ્રક્ષેપ ગતિના માર્ગોની ગણતરી.",
                 examples: [
-                    { q_en: "Solve: \\\\(x^2 - 5x + 6 = 0\\\\)", q_gu: "ઉકેલો: \\\\(x^2 - 5x + 6 = 0\\\\)",
-                      steps: [{ en: "Factorize.", gu: "અવયવ પાડો.", math: "(x - 2)(x - 3) = 0" },
-                              { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "x = 2, \\\\quad x = 3" }] },
-                    { q_en: "Solve: \\\\(x^2 - 9 = 0\\\\)", q_gu: "ઉકેલો: \\\\(x^2 - 9 = 0\\\\)",
-                      steps: [{ en: "Move constant.", gu: "અચળ પદ ખસેડો.", math: "x^2 = 9" },
-                              { en: "Square root.", gu: "વર્ગમૂળ લો.", math: "x = \\\\pm 3" }] },
-                    { q_en: "Discriminant of \\\\(2x^2 - 4x + 1 = 0\\\\)", q_gu: "વિવેચક શોધો",
-                      steps: [{ en: "Formula \\\\(\\\\Delta = b^2 - 4ac\\\\).", gu: "સૂત્ર \\\\(\\\\Delta = b^2 - 4ac\\\\).", math: "\\\\Delta = (-4)^2 - 4(2)(1)" },
-                              { en: "Calculate.", gu: "ગણતરી કરો.", math: "\\\\Delta = 16 - 8 = 8" }] },
-                    { q_en: "Solve: \\\\(x^2 - x - 12 = 0\\\\)", q_gu: "ઉકેલો: \\\\(x^2 - x - 12 = 0\\\\)",
-                      steps: [{ en: "Factorize.", gu: "અવયવ પાડો.", math: "(x - 4)(x + 3) = 0" },
-                              { en: "Roots.", gu: "બીજ.", math: "x = 4, \\\\quad x = -3" }] },
-                    { q_en: "Solve: \\\\(x^2 - 4x + 4 = 0\\\\)", q_gu: "ઉકેલો: \\\\(x^2 - 4x + 4 = 0\\\\)",
-                      steps: [{ en: "Discriminant is 0.", gu: "વિવેચક 0 છે.", math: "\\\\Delta = 0" },
-                              { en: "Equal roots.", gu: "સમાન બીજ.", math: "x = \\\\frac{4}{2} = 2" }] },
-                    { q_en: "Solve: \\\\(3x^2 = 12\\\\)", q_gu: "ઉકેલો: \\\\(3x^2 = 12\\\\)",
-                      steps: [{ en: "Divide by 3.", gu: "3 વડે ભાગો.", math: "x^2 = 4" },
-                              { en: "Roots.", gu: "બીજ.", math: "x = \\\\pm 2" }] }
+                    {
+                        q_en: "Solve: \\(x^2 - 5x + 6 = 0\\)", q_gu: "ઉકેલો: \\(x^2 - 5x + 6 = 0\\)",
+                        steps: [
+                            { en: "Factorize.", gu: "અવયવ પાડો.", math: "(x - 2)(x - 3) = 0" },
+                            { en: "Solve for x.", gu: "x માટે ઉકેલો.", math: "x = 2, \\quad x = 3" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(x^2 - 9 = 0\\)", q_gu: "ઉકેલો: \\(x^2 - 9 = 0\\)",
+                        steps: [
+                            { en: "Move constant.", gu: "અચળ પદ ખસેડો.", math: "x^2 = 9" },
+                            { en: "Square root.", gu: "વર્ગમૂળ લો.", math: "x = \\pm 3" }
+                        ]
+                    },
+                    {
+                        q_en: "Discriminant of \\(2x^2 - 4x + 1 = 0\\)", q_gu: "વિવેચક શોધો",
+                        steps: [
+                            { en: "Formula \\(\\Delta = b^2 - 4ac\\).", gu: "સૂત્ર \\(\\Delta = b^2 - 4ac\\).", math: "\\Delta = (-4)^2 - 4(2)(1)" },
+                            { en: "Calculate.", gu: "ગણતરી કરો.", math: "\\Delta = 16 - 8 = 8" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(x^2 - x - 12 = 0\\)", q_gu: "ઉકેલો: \\(x^2 - x - 12 = 0\\)",
+                        steps: [
+                            { en: "Factorize.", gu: "અવયવ પાડો.", math: "(x - 4)(x + 3) = 0" },
+                            { en: "Roots.", gu: "બીજ.", math: "x = 4, \\quad x = -3" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(x^2 - 4x + 4 = 0\\)", q_gu: "ઉકેલો: \\(x^2 - 4x + 4 = 0\\)",
+                        steps: [
+                            { en: "Discriminant is 0.", gu: "વિવેચક 0 છે.", math: "\\Delta = 0" },
+                            { en: "Equal roots.", gu: "સમાન બીજ.", math: "x = \\frac{4}{2} = 2" }
+                        ]
+                    },
+                    {
+                        q_en: "Solve: \\(3x^2 = 12\\)", q_gu: "ઉકેલો: \\(3x^2 = 12\\)",
+                        steps: [
+                            { en: "Divide by 3.", gu: "3 વડે ભાગો.", math: "x^2 = 4" },
+                            { en: "Roots.", gu: "બીજ.", math: "x = \\pm 2" }
+                        ]
+                    }
                 ]
             },
             {
                 title_en: "Coordinate Geometry", title_gu: "યામ ભૂમિતિ",
                 def_en: "Geometry using a coordinate system.", def_gu: "યામ પદ્ધતિનો ઉપયોગ કરીને ભૂમિતિ.",
-                formula: "$$d = \\\\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$$",
+                formula: "$$d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$$",
                 app_en: "GPS navigation and map reading.", app_gu: "GPS નેવિગેશન અને નકશા વાંચન.",
                 examples: [
-                    { q_en: "Distance between (0,0) and (3,4)", q_gu: "(0,0) અને (3,4) વચ્ચેનું અંતર",
-                      steps: [{ en: "Apply distance formula.", gu: "અંતરનું સૂત્ર લાગુ કરો.", math: "d = \\\\sqrt{(3-0)^2 + (4-0)^2}" },
-                              { en: "Calculate.", gu: "ગણતરી કરો.", math: "d = \\\\sqrt{9 + 16} = \\\\sqrt{25} = 5" }] },
-                    { q_en: "Midpoint of (2,4) and (6,8)", q_gu: "(2,4) અને (6,8) નું મધ્યબિંદુ",
-                      steps: [{ en: "Average coordinates.", gu: "યામની સરેરાશ.", math: "M = \\\\left(\\\\frac{2+6}{2}, \\\\frac{4+8}{2}\\\\right)" },
-                              { en: "Result.", gu: "પરિણામ.", math: "M = (4, 6)" }] },
-                    { q_en: "Slope of line through (1,2) and (3,6)", q_gu: "રેખાનો ઢાળ",
-                      steps: [{ en: "Slope formula.", gu: "ઢાળનું સૂત્ર.", math: "m = \\\\frac{y_2 - y_1}{x_2 - x_1} = \\\\frac{6 - 2}{3 - 1}" },
-                              { en: "Calculate.", gu: "ગણતરી.", math: "m = \\\\frac{4}{2} = 2" }] },
-                    { q_en: "Distance between (1,1) and (1,5)", q_gu: "(1,1) અને (1,5) વચ્ચેનું અંતર",
-                      steps: [{ en: "Vertical line.", gu: "ઊભી રેખા.", math: "d = \\\\sqrt{0^2 + 4^2}" },
-                              { en: "Result.", gu: "પરિણામ.", math: "d = 4" }] },
-                    { q_en: "Midpoint of (-2,-2) and (2,2)", q_gu: "મધ્યબિંદુ શોધો",
-                      steps: [{ en: "Average coordinates.", gu: "સરેરાશ.", math: "M = \\\\left(\\\\frac{-2+2}{2}, \\\\frac{-2+2}{2}\\\\right)" },
-                              { en: "Result.", gu: "પરિણામ.", math: "M = (0, 0)" }] },
-                    { q_en: "y-intercept of \\\\(y = 3x + 5\\\\)", q_gu: "y-અંતઃખંડ શોધો",
-                      steps: [{ en: "Compare to y = mx + c.", gu: "સરખામણી કરો.", math: "c = 5" },
-                              { en: "Result.", gu: "પરિણામ.", math: "\\\\text{Intercept} = 5" }] }
+                    {
+                        q_en: "Distance between (0,0) and (3,4)", q_gu: "(0,0) અને (3,4) વચ્ચેનું અંતર",
+                        steps: [
+                            { en: "Apply distance formula.", gu: "અંતરનું સૂત્ર લાગુ કરો.", math: "d = \\sqrt{(3-0)^2 + (4-0)^2}" },
+                            { en: "Calculate.", gu: "ગણતરી કરો.", math: "d = \\sqrt{9 + 16} = \\sqrt{25} = 5" }
+                        ]
+                    },
+                    {
+                        q_en: "Midpoint of (2,4) and (6,8)", q_gu: "(2,4) અને (6,8) નું મધ્યબિંદુ",
+                        steps: [
+                            { en: "Average coordinates.", gu: "યામની સરેરાશ.", math: "M = \\left(\\frac{2+6}{2}, \\frac{4+8}{2}\\right)" },
+                            { en: "Result.", gu: "પરિણામ.", math: "M = (4, 6)" }
+                        ]
+                    },
+                    {
+                        q_en: "Slope of line through (1,2) and (3,6)", q_gu: "રેખાનો ઢાળ",
+                        steps: [
+                            { en: "Slope formula.", gu: "ઢાળનું સૂત્ર.", math: "m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{6 - 2}{3 - 1}" },
+                            { en: "Calculate.", gu: "ગણતરી.", math: "m = \\frac{4}{2} = 2" }
+                        ]
+                    },
+                    {
+                        q_en: "Distance between (1,1) and (1,5)", q_gu: "(1,1) અને (1,5) વચ્ચેનું અંતર",
+                        steps: [
+                            { en: "Vertical line.", gu: "ઊભી રેખા.", math: "d = \\sqrt{0^2 + 4^2}" },
+                            { en: "Result.", gu: "પરિણામ.", math: "d = 4" }
+                        ]
+                    },
+                    {
+                        q_en: "Midpoint of (-2,-2) and (2,2)", q_gu: "મધ્યબિંદુ શોધો",
+                        steps: [
+                            { en: "Average coordinates.", gu: "સરેરાશ.", math: "M = \\left(\\frac{-2+2}{2}, \\frac{-2+2}{2}\\right)" },
+                            { en: "Result.", gu: "પરિણામ.", math: "M = (0, 0)" }
+                        ]
+                    },
+                    {
+                        q_en: "y-intercept of \\(y = 3x + 5\\)", q_gu: "y-અંતઃખંડ શોધો",
+                        steps: [
+                            { en: "Compare to y = mx + c.", gu: "સરખામણી કરો.", math: "c = 5" },
+                            { en: "Result.", gu: "પરિણામ.", math: "\\text{Intercept} = 5" }
+                        ]
+                    }
                 ]
             },
             {
                 title_en: "LCM Calculator", title_gu: "લ.સા.અ.",
                 def_en: "Least Common Multiple.", def_gu: "લઘુત્તમ સામાન્ય અવયવી.",
-                formula: "$$LCM(a,b) = \\\\frac{|a \\\\cdot b|}{GCD(a,b)}$$",
+                formula: "$$\\text{LCM}(a,b) = \\frac{|a \\cdot b|}{\\text{GCD}(a,b)}$$",
                 app_en: "Synchronizing schedules.", app_gu: "સમયપત્રક સુમેળ કરવું.",
                 examples: [
-                    { q_en: "LCM of 4 and 6", q_gu: "4 અને 6 નો લ.સા.અ.",
-                      steps: [{ en: "Multiples of 4 and 6.", gu: "ગુણકો.", math: "4, 8, 12... \\\\text{ and } 6, 12..." },
-                              { en: "Smallest common.", gu: "સૌથી નાનો.", math: "LCM = 12" }] },
-                    { q_en: "LCM of 3 and 5", q_gu: "3 અને 5 નો લ.સા.અ.",
-                      steps: [{ en: "Both are primes.", gu: "બંને અવિભાજ્ય.", math: "LCM = 3 \\\\times 5" },
-                              { en: "Result.", gu: "પરિણામ.", math: "LCM = 15" }] },
-                    { q_en: "LCM of 10 and 20", q_gu: "10 અને 20 નો લ.સા.અ.",
-                      steps: [{ en: "20 is multiple of 10.", gu: "20 એ 10 નો ગુણક છે.", math: "LCM = 20" }] },
-                    { q_en: "LCM of 8 and 12", q_gu: "8 અને 12 નો લ.સા.અ.",
-                      steps: [{ en: "Prime factors.", gu: "અવિભાજ્ય અવયવો.", math: "2^3 \\\\text{ and } 2^2 \\\\times 3" },
-                              { en: "Result.", gu: "પરિણામ.", math: "LCM = 8 \\\\times 3 = 24" }] },
-                    { q_en: "LCM of 2, 3, 4", q_gu: "લ.સા.અ. શોધો",
-                      steps: [{ en: "Common multiple.", gu: "સામાન્ય ગુણક.", math: "LCM = 12" }] },
-                    { q_en: "LCM of 7 and 14", q_gu: "લ.સા.અ. શોધો",
-                      steps: [{ en: "14 is multiple of 7.", gu: "14 એ 7 નો ગુણક છે.", math: "LCM = 14" }] }
+                    {
+                        q_en: "LCM of 4 and 6", q_gu: "4 અને 6 નો લ.સા.અ.",
+                        steps: [
+                            { en: "Multiples of 4 and 6.", gu: "ગુણકો.", math: "4, 8, 12... \\text{ and } 6, 12..." },
+                            { en: "Smallest common.", gu: "સૌથી નાનો.", math: "\\text{LCM} = 12" }
+                        ]
+                    },
+                    {
+                        q_en: "LCM of 3 and 5", q_gu: "3 અને 5 નો લ.સા.અ.",
+                        steps: [
+                            { en: "Both are primes.", gu: "બંને અવિભાજ્ય.", math: "\\text{LCM} = 3 \\times 5" },
+                            { en: "Result.", gu: "પરિણામ.", math: "\\text{LCM} = 15" }
+                        ]
+                    },
+                    {
+                        q_en: "LCM of 10 and 20", q_gu: "10 અને 20 નો લ.સા.અ.",
+                        steps: [
+                            { en: "20 is multiple of 10.", gu: "20 એ 10 નો ગુણક છે.", math: "\\text{LCM} = 20" }
+                        ]
+                    },
+                    {
+                        q_en: "LCM of 8 and 12", q_gu: "8 અને 12 નો લ.સા.અ.",
+                        steps: [
+                            { en: "Prime factors.", gu: "અવિભાજ્ય અવયવો.", math: "2^3 \\text{ and } 2^2 \\times 3" },
+                            { en: "Result.", gu: "પરિણામ.", math: "\\text{LCM} = 8 \\times 3 = 24" }
+                        ]
+                    },
+                    {
+                        q_en: "LCM of 2, 3, 4", q_gu: "લ.સા.અ. શોધો",
+                        steps: [
+                            { en: "Common multiple.", gu: "સામાન્ય ગુણક.", math: "\\text{LCM} = 12" }
+                        ]
+                    },
+                    {
+                        q_en: "LCM of 7 and 14", q_gu: "લ.સા.અ. શોધો",
+                        steps: [
+                            { en: "14 is multiple of 7.", gu: "14 એ 7 નો ગુણક છે.", math: "\\text{LCM} = 14" }
+                        ]
+                    }
                 ]
             },
             {
                 title_en: "GCD Calculator", title_gu: "ગુ.સા.અ.",
                 def_en: "Greatest Common Divisor.", def_gu: "ગુરુત્તમ સામાન્ય અવયવ.",
-                formula: "$$\\\\text{Euclidean Algorithm: } A = BQ + R$$",
+                formula: "$$\\text{Euclidean Algorithm: } A = BQ + R$$",
                 app_en: "Simplifying fractions.", app_gu: "અપૂર્ણાંકને સરળ બનાવવા.",
                 examples: [
-                    { q_en: "GCD of 12 and 18", q_gu: "12 અને 18 નો ગુ.સા.અ.",
-                      steps: [{ en: "Common divisors.", gu: "સામાન્ય ભાજકો.", math: "1, 2, 3, 6" },
-                              { en: "Greatest.", gu: "ગુરુત્તમ.", math: "GCD = 6" }] },
-                    { q_en: "GCD of 15 and 25", q_gu: "ગુ.સા.અ. શોધો",
-                      steps: [{ en: "Both end in 5.", gu: "બંને 5 માં અંત પામે છે.", math: "GCD = 5" }] },
-                    { q_en: "GCD of 7 and 13", q_gu: "ગુ.સા.અ. શોધો",
-                      steps: [{ en: "Both are prime.", gu: "બંને અવિભાજ્ય.", math: "GCD = 1" }] },
-                    { q_en: "GCD of 24 and 36", q_gu: "ગુ.સા.અ. શોધો",
-                      steps: [{ en: "Euclidean algorithm.", gu: "યુક્લિડની રીત.", math: "36 = 24(1) + 12" },
-                              { en: "Next step.", gu: "આગળનું પગલું.", math: "24 = 12(2) + 0 \\\\implies GCD = 12" }] },
-                    { q_en: "GCD of 100 and 10", q_gu: "ગુ.સા.અ. શોધો",
-                      steps: [{ en: "100 is divisible by 10.", gu: "100 એ 10 વડે વિભાજ્ય છે.", math: "GCD = 10" }] },
-                    { q_en: "GCD of 14 and 21", q_gu: "ગુ.સા.અ. શોધો",
-                      steps: [{ en: "Largest factor.", gu: "સૌથી મોટો અવયવ.", math: "GCD = 7" }] }
+                    {
+                        q_en: "GCD of 12 and 18", q_gu: "12 અને 18 નો ગુ.સા.અ.",
+                        steps: [
+                            { en: "Common divisors.", gu: "સામાન્ય ભાજકો.", math: "1, 2, 3, 6" },
+                            { en: "Greatest.", gu: "ગુરુત્તમ.", math: "\\text{GCD} = 6" }
+                        ]
+                    },
+                    {
+                        q_en: "GCD of 15 and 25", q_gu: "ગુ.સા.અ. શોધો",
+                        steps: [
+                            { en: "Both end in 5.", gu: "બંને 5 માં અંત પામે છે.", math: "\\text{GCD} = 5" }
+                        ]
+                    },
+                    {
+                        q_en: "GCD of 7 and 13", q_gu: "ગુ.સા.અ. શોધો",
+                        steps: [
+                            { en: "Both are prime.", gu: "બંને અવિભાજ્ય.", math: "\\text{GCD} = 1" }
+                        ]
+                    },
+                    {
+                        q_en: "GCD of 24 and 36", q_gu: "ગુ.સા.અ. શોધો",
+                        steps: [
+                            { en: "Euclidean algorithm.", gu: "યુક્લિડની રીત.", math: "36 = 24(1) + 12" },
+                            { en: "Next step.", gu: "આગળનું પગલું.", math: "24 = 12(2) + 0 \\implies \\text{GCD} = 12" }
+                        ]
+                    },
+                    {
+                        q_en: "GCD of 100 and 10", q_gu: "ગુ.સા.અ. શોધો",
+                        steps: [
+                            { en: "100 is divisible by 10.", gu: "100 એ 10 વડે વિભાજ્ય છે.", math: "\\text{GCD} = 10" }
+                        ]
+                    },
+                    {
+                        q_en: "GCD of 14 and 21", q_gu: "ગુ.સા.અ. શોધો",
+                        steps: [
+                            { en: "Largest factor.", gu: "સૌથી મોટો અવયવ.", math: "\\text{GCD} = 7" }
+                        ]
+                    }
                 ]
             },
             {
                 title_en: "Concept of Set", title_gu: "ગણનો ખ્યાલ",
                 def_en: "A well-defined collection of distinct objects.", def_gu: "ભિન્ન વસ્તુઓનો સુવ્યાખ્યાયિત સમૂહ.",
-                formula: "$$A \\\\cup B \\\\text{ (Union)}, \\\\quad A \\\\cap B \\\\text{ (Intersection)}$$",
+                formula: "$$A \\cup B \\text{ (Union)}, \\quad A \\cap B \\text{ (Intersection)}$$",
                 app_en: "Database logic and querying.", app_gu: "ડેટાબેઝ લોજિક અને ક્વેરી.",
                 examples: [
-                    { q_en: "Let \\\\(A = \\\\{1, 2\\\\}\\\\) and \\\\(B = \\\\{2, 3\\\\}\\\\). Find \\\\(A \\\\cup B\\\\)", q_gu: "\\\\(A \\\\cup B\\\\) (યોગગણ) શોધો",
-                      steps: [{ en: "Combine all elements.", gu: "બધા ઘટકો ભેગા કરો.", math: "A \\\\cup B = \\\\{1, 2, 3\\\\}" }] },
-                    { q_en: "Let \\\\(A = \\\\{1, 2, 3\\\\}\\\\) and \\\\(B = \\\\{3, 4\\\\}\\\\). Find \\\\(A \\\\cap B\\\\)", q_gu: "\\\\(A \\\\cap B\\\\) (છેદગણ) શોધો",
-                      steps: [{ en: "Common elements only.", gu: "માત્ર સામાન્ય ઘટકો.", math: "A \\\\cap B = \\\\{3\\\\}" }] },
-                    { q_en: "Universal \\\\(U=\\\\{1,2,3,4\\\\}\\\\), \\\\(A=\\\\{1,2\\\\}\\\\). Find \\\\(A'\\\\)", q_gu: "\\\\(A'\\\\) (પૂરક ગણ) શોધો",
-                      steps: [{ en: "Elements in U not in A.", gu: "U માં હોય પણ A માં ન હોય તેવા.", math: "A' = \\\\{3, 4\\\\}" }] },
-                    { q_en: "Subsets of \\\\(A = \\\\{a, b\\\\}\\\\)", q_gu: "ઉપગણો લખો",
-                      steps: [{ en: "Formula \\\\(2^n\\\\).", gu: "સૂત્ર.", math: "2^2 = 4 \\\\text{ subsets}" },
-                              { en: "List them.", gu: "યાદી.", math: "\\\\{\\\\}, \\\\{a\\\\}, \\\\{b\\\\}, \\\\{a, b\\\\}" }] },
-                    { q_en: "Difference \\\\(A - B\\\\) if \\\\(A=\\\\{1,2,3\\\\}, B=\\\\{2,3,4\\\\}\\\\)", q_gu: "તફાવત ગણ",
-                      steps: [{ en: "In A but not B.", gu: "A માં છે પણ B માં નથી.", math: "A - B = \\\\{1\\\\}" }] },
-                    { q_en: "Are \\\\(\\\\{1, 2\\\\}\\\\) and \\\\(\\\\{2, 1\\\\}\\\\) equal?", q_gu: "શું ગણ સમાન છે?",
-                      steps: [{ en: "Order doesn't matter.", gu: "ક્રમ મહત્વનો નથી.", math: "\\\\text{Yes, Equal}" }] }
+                    {
+                        q_en: "Let \\(A = \\{1, 2\\}\\) and \\(B = \\{2, 3\\}\\). Find \\(A \\cup B\\)", q_gu: "\\(A \\cup B\\) (યોગગણ) શોધો",
+                        steps: [
+                            { en: "Combine all elements.", gu: "બધા ઘટકો ભેગા કરો.", math: "A \\cup B = \\{1, 2, 3\\}" }
+                        ]
+                    },
+                    {
+                        q_en: "Let \\(A = \\{1, 2, 3\\}\\) and \\(B = \\{3, 4\\}\\). Find \\(A \\cap B\\)", q_gu: "\\(A \\cap B\\) (છેદગણ) શોધો",
+                        steps: [
+                            { en: "Common elements only.", gu: "માત્ર સામાન્ય ઘટકો.", math: "A \\cap B = \\{3\\}" }
+                        ]
+                    },
+                    {
+                        q_en: "Universal \\(U=\\{1,2,3,4\\}\\), \\(A=\\{1,2\\}\\). Find \\(A'\\)", q_gu: "\\(A'\\) (પૂરક ગણ) શોધો",
+                        steps: [
+                            { en: "Elements in U not in A.", gu: "U માં હોય પણ A માં ન હોય તેવા.", math: "A' = \\{3, 4\\}" }
+                        ]
+                    },
+                    {
+                        q_en: "Subsets of \\(A = \\{a, b\\}\\)", q_gu: "ઉપગણો લખો",
+                        steps: [
+                            { en: "Formula \\(2^n\\).", gu: "સૂત્ર.", math: "2^2 = 4 \\text{ subsets}" },
+                            { en: "List them.", gu: "યાદી.", math: "\\{\\}, \\{a\\}, \\{b\\}, \\{a, b\\}" }
+                        ]
+                    },
+                    {
+                        q_en: "Difference \\(A - B\\) if \\(A=\\{1,2,3\\}, B=\\{2,3,4\\}\\)", q_gu: "તફાવત ગણ",
+                        steps: [
+                            { en: "In A but not B.", gu: "A માં છે પણ B માં નથી.", math: "A - B = \\{1\\}" }
+                        ]
+                    },
+                    {
+                        q_en: "Are \\(\\{1, 2\\}\\) and \\(\\{2, 1\\}\\) equal?", q_gu: "શું ગણ સમાન છે?",
+                        steps: [
+                            { en: "Order doesn't matter.", gu: "ક્રમ મહત્વનો નથી.", math: "\\text{Yes, Equal}" }
+                        ]
+                    }
                 ]
             }
         ];
 
+        // --- 2. RENDER BILINGUAL CONTENT ---
         function renderContent() {
             const container = document.getElementById('content-container');
             let html = '';
 
             topicsData.forEach((topic, index) => {
                 let examplesHtml = '';
+                
                 topic.examples.forEach((ex, exIdx) => {
-                    let stepsHtml = ex.steps.map(step => `
+                    let stepsHtml = ex.steps.map((step) => `
                         <div class="step-block">
                             <div style="font-weight: 600;">${step.en}</div>
                             <div class="gujarati">${step.gu}</div>
@@ -337,52 +807,126 @@
                     
                     examplesHtml += `
                     <details>
-                        <summary><div>Example ${exIdx + 1}: ${ex.q_en} <span class="gujarati">ઉદાહરણ ${exIdx + 1}: ${ex.q_gu}</span></div></summary>
-                        <div class="example-content">${stepsHtml}</div>
-                    </details>`;
+                        <summary>
+                            <div>
+                                Example ${exIdx + 1}: ${ex.q_en} 
+                                <span class="gujarati">ઉદાહરણ ${exIdx + 1}: ${ex.q_gu}</span>
+                            </div>
+                        </summary>
+                        <div class="example-content">
+                            ${stepsHtml}
+                        </div>
+                    </details>
+                    `;
                 });
 
                 html += `
                 <div class="topic-card">
-                    <h2 class="topic-title">${index + 1}. ${topic.title_en} <span class="gujarati" style="font-size: 1.2rem; color: var(--text-main); font-weight: normal;">${topic.title_gu}</span></h2>
+                    <h2 class="topic-title">
+                        ${index + 1}. ${topic.title_en}
+                        <span class="gujarati" style="font-size: 1.2rem; color: var(--text-main); font-weight: normal;">${topic.title_gu}</span>
+                    </h2>
                     <div class="section-heading">Definition <span class="inline-gu">(વ્યાખ્યા):</span></div>
-                    <p>${topic.def_en}</p><p class="gujarati">${topic.def_gu}</p>
+                    <p>${topic.def_en}</p>
+                    <p class="gujarati">${topic.def_gu}</p>
                     <div class="formula-box">${topic.formula}</div>
                     <div class="section-heading">Real-Life Application <span class="inline-gu">(વ્યવહારિક ઉપયોગ):</span></div>
-                    <p>${topic.app_en}</p><p class="gujarati">${topic.app_gu}</p>
-                    <div class="section-heading" style="margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">Detailed Solved Examples <span class="inline-gu">(વિગતવાર ઉકેલેલા ઉદાહરણો):</span></div>
+                    <p>${topic.app_en}</p>
+                    <p class="gujarati">${topic.app_gu}</p>
+                    <div class="section-heading" style="margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Detailed Solved Examples <span class="inline-gu">(વિગતવાર ઉકેલેલા ઉદાહરણો):</span>
+                    </div>
                     ${examplesHtml}
-                </div>`;
+                </div>
+                `;
             });
+
             container.innerHTML = html;
         }
 
+        // --- 3. INTERACTIVE LAB LOGIC (ALL 8 TOPICS) ---
         function setupLabInputs() {
             const tool = document.getElementById('tool-selector').value;
             const inputContainer = document.getElementById('dynamic-inputs');
             document.getElementById('lab-output').innerHTML = "<em>Select a tool and click solve to see the detailed step-by-step solution here.<br><span class='inline-gu'>સાધન પસંદ કરો અને વિગતવાર પગલાવાર ઉકેલ જોવા માટે ઉકેલો પર ક્લિક કરો.</span></em>";
             
             let html = '';
+            
             if (tool === 'linear') {
-                html = `<div class="eq-row"><label style="width: 100%;">Eq 1 (સમીકરણ 1):</label><input type="number" id="a1" placeholder="a₁" style="width:70px"> x + <input type="number" id="b1" placeholder="b₁" style="width:70px"> y = <input type="number" id="c1" placeholder="c₁" style="width:70px"></div>
-                        <div class="eq-row"><label style="width: 100%;">Eq 2 (સમીકરણ 2):</label><input type="number" id="a2" placeholder="a₂" style="width:70px"> x + <input type="number" id="b2" placeholder="b₂" style="width:70px"> y = <input type="number" id="c2" placeholder="c₂" style="width:70px"></div>`;
+                html = `
+                    <div class="eq-row">
+                        <label style="width: 100%;">Eq 1 (સમીકરણ 1):</label>
+                        <input type="number" id="a1" placeholder="a₁" style="width:70px"> x + 
+                        <input type="number" id="b1" placeholder="b₁" style="width:70px"> y = 
+                        <input type="number" id="c1" placeholder="c₁" style="width:70px">
+                    </div>
+                    <div class="eq-row">
+                        <label style="width: 100%;">Eq 2 (સમીકરણ 2):</label>
+                        <input type="number" id="a2" placeholder="a₂" style="width:70px"> x + 
+                        <input type="number" id="b2" placeholder="b₂" style="width:70px"> y = 
+                        <input type="number" id="c2" placeholder="c₂" style="width:70px">
+                    </div>`;
             } else if (tool === 'factor') {
-                html = `<div class="eq-row"><label style="width: 100%;">Trinomial Form (ત્રિપદી સ્વરૂપ): x² + bx + c</label>x² + <input type="number" id="fb" placeholder="b" style="width:80px"> x + <input type="number" id="fc" placeholder="c" style="width:80px"></div>`;
+                html = `
+                    <div class="eq-row">
+                        <label style="width: 100%;">Trinomial Form (ત્રિપદી સ્વરૂપ): x² + bx + c</label>
+                        x² + <input type="number" id="fb" placeholder="b" style="width:80px"> x + 
+                        <input type="number" id="fc" placeholder="c" style="width:80px">
+                    </div>`;
             } else if (tool === 'poly') {
-                html = `<div class="eq-row"><label style="width: 100%;">Polynomial (બહુપદી): P(x) = ax² + bx + c</label><input type="number" id="pa" placeholder="a" style="width:70px"> x² + <input type="number" id="pb" placeholder="b" style="width:70px"> x + <input type="number" id="pc" placeholder="c" style="width:70px"></div>
-                        <div class="eq-row"><label style="width: 100%;">Evaluate at x = (x ની કિંમત):</label><input type="number" id="px" placeholder="x" style="width:100px"></div>`;
+                html = `
+                    <div class="eq-row">
+                        <label style="width: 100%;">Polynomial (બહુપદી): P(x) = ax² + bx + c</label>
+                        <input type="number" id="pa" placeholder="a" style="width:70px"> x² + 
+                        <input type="number" id="pb" placeholder="b" style="width:70px"> x + 
+                        <input type="number" id="pc" placeholder="c" style="width:70px">
+                    </div>
+                    <div class="eq-row">
+                        <label style="width: 100%;">Evaluate at x = (x ની કિંમત):</label>
+                        <input type="number" id="px" placeholder="x value" style="width:100px">
+                    </div>`;
             } else if (tool === 'quadratic') {
-                html = `<div class="eq-row"><label style="width: 100%;">Standard Form (પ્રમાણિત સ્વરૂપ): ax² + bx + c = 0</label><input type="number" id="qa" placeholder="a" style="width:80px"> x² + <input type="number" id="qb" placeholder="b" style="width:80px"> x + <input type="number" id="qc" placeholder="c" style="width:80px"> = 0</div>`;
+                html = `
+                    <div class="eq-row">
+                        <label style="width: 100%;">Standard Form (પ્રમાણિત સ્વરૂપ): ax² + bx + c = 0</label>
+                        <input type="number" id="qa" placeholder="a" style="width:80px"> x² + 
+                        <input type="number" id="qb" placeholder="b" style="width:80px"> x + 
+                        <input type="number" id="qc" placeholder="c" style="width:80px"> = 0
+                    </div>`;
             } else if (tool === 'coord') {
-                html = `<div class="eq-row"><label style="width: 100%;">Point 1 (બિંદુ 1):</label>X₁: <input type="number" id="cx1" style="width:80px"> Y₁: <input type="number" id="cy1" style="width:80px"></div>
-                        <div class="eq-row"><label style="width: 100%;">Point 2 (બિંદુ 2):</label>X₂: <input type="number" id="cx2" style="width:80px"> Y₂: <input type="number" id="cy2" style="width:80px"></div>`;
+                html = `
+                    <div class="eq-row">
+                        <label style="width: 100%;">Point 1 (બિંદુ 1):</label>
+                        X₁: <input type="number" id="cx1" placeholder="x₁" style="width:80px"> 
+                        Y₁: <input type="number" id="cy1" placeholder="y₁" style="width:80px">
+                    </div>
+                    <div class="eq-row">
+                        <label style="width: 100%;">Point 2 (બિંદુ 2):</label>
+                        X₂: <input type="number" id="cx2" placeholder="x₂" style="width:80px"> 
+                        Y₂: <input type="number" id="cy2" placeholder="y₂" style="width:80px">
+                    </div>`;
             } else if (tool === 'lcm' || tool === 'gcd') {
-                html = `<div class="eq-row"><label>Number 1 (સંખ્યા 1):</label><input type="number" id="num1" style="width: 120px;"></div>
-                        <div class="eq-row"><label>Number 2 (સંખ્યા 2):</label><input type="number" id="num2" style="width: 120px;"></div>`;
+                html = `
+                    <div class="eq-row">
+                        <label>Number 1 (સંખ્યા 1):</label>
+                        <input type="number" id="num1" placeholder="e.g. 24" style="width: 120px;">
+                    </div>
+                    <div class="eq-row">
+                        <label>Number 2 (સંખ્યા 2):</label>
+                        <input type="number" id="num2" placeholder="e.g. 36" style="width: 120px;">
+                    </div>`;
             } else if (tool === 'sets') {
-                html = `<div class="eq-row"><label style="width: 100%;">Set A (ગણ A) - Comma separated (અલ્પવિરામથી અલગ):</label><input type="text" id="setA" placeholder="e.g., 1, 2, 3" style="width: 100%; max-width: 300px;"></div>
-                        <div class="eq-row"><label style="width: 100%;">Set B (ગણ B) - Comma separated (અલ્પવિરામથી અલગ):</label><input type="text" id="setB" placeholder="e.g., 3, 4, 5" style="width: 100%; max-width: 300px;"></div>`;
+                html = `
+                    <div class="eq-row">
+                        <label style="width: 100%;">Set A (ગણ A) - Comma separated (અલ્પવિરામથી અલગ કરો):</label>
+                        <input type="text" id="setA" placeholder="e.g., 1, 2, 3" style="width: 100%; max-width: 300px;">
+                    </div>
+                    <div class="eq-row">
+                        <label style="width: 100%;">Set B (ગણ B) - Comma separated (અલ્પવિરામથી અલગ કરો):</label>
+                        <input type="text" id="setB" placeholder="e.g., 3, 4, 5" style="width: 100%; max-width: 300px;">
+                    </div>`;
             }
+            
             inputContainer.innerHTML = html;
         }
 
@@ -393,76 +937,163 @@
 
             try {
                 if (tool === 'linear') {
-                    let a1=parseFloat(document.getElementById('a1').value), b1=parseFloat(document.getElementById('b1').value), c1=parseFloat(document.getElementById('c1').value);
-                    let a2=parseFloat(document.getElementById('a2').value), b2=parseFloat(document.getElementById('b2').value), c2=parseFloat(document.getElementById('c2').value);
-                    if ([a1,b1,c1,a2,b2,c2].some(isNaN)) throw "Please fill all input fields.";
-                    let d = (a1*b2)-(a2*b1), dx = (c1*b2)-(c2*b1), dy = (a1*c2)-(a2*c1);
-                    res = `<div class="calc-step"><strong>Step 1: Main Determinant D</strong>\\[ D = (${a1})(${b2}) - (${a2})(${b1}) = ${d} \\]</div>`;
-                    if (d === 0) res += `<div class="calc-step" style="color:red;">D = 0: No unique solution.</div>`;
-                    else {
-                        res += `<div class="calc-step"><strong>Step 2: \\(D_x\\) & \\(D_y\\)</strong>\\[ D_x = (${c1})(${b2}) - (${c2})(${b1}) = ${dx} \\] \\[ D_y = (${a1})(${c2}) - (${a2})(${c1}) = ${dy} \\]</div>`;
-                        res += `<div class="calc-step"><strong>Step 3: Final Answer</strong>\\[ x = \\\\frac{${dx}}{${d}} = ${dx/d}, \\\\quad y = \\\\frac{${dy}}{${d}} = ${dy/d} \\]</div>`;
+                    let a1 = parseFloat(document.getElementById('a1').value);
+                    let b1 = parseFloat(document.getElementById('b1').value);
+                    let c1 = parseFloat(document.getElementById('c1').value);
+                    let a2 = parseFloat(document.getElementById('a2').value);
+                    let b2 = parseFloat(document.getElementById('b2').value);
+                    let c2 = parseFloat(document.getElementById('c2').value);
+
+                    if ([a1,b1,c1,a2,b2,c2].some(isNaN)) throw "Please fill all input fields. (કૃપા કરીને બધા ક્ષેત્રો ભરો.)";
+
+                    let d = (a1 * b2) - (a2 * b1);
+                    let dx = (c1 * b2) - (c2 * b1);
+                    let dy = (a1 * c2) - (a2 * c1);
+
+                    res = `<div class="calc-step"><strong>Step 1: Main Determinant D</strong><br><span class="gujarati">મુખ્ય નિશ્ચાયક D</span>$$ D = (${a1})(${b2}) - (${a2})(${b1}) = ${d} $$</div>`;
+                    
+                    if (d === 0) {
+                        res += `<div class="calc-step" style="color:red;">$$ D = 0 $$ No unique solution. (કોઈ અનન્ય ઉકેલ નથી.)</div>`;
+                    } else {
+                        res += `<div class="calc-step"><strong>Step 2: Calculate D_x and D_y</strong><br><span class="gujarati">D_x અને D_y ની ગણતરી</span>$$ D_x = (${c1})(${b2}) - (${c2})(${b1}) = ${dx} $$ $$ D_y = (${a1})(${c2}) - (${a2})(${c1}) = ${dy} $$</div>`;
+                        let x = dx/d, y = dy/d;
+                        res += `<div class="calc-step"><strong>Step 3: Final Answer</strong><br><span class="gujarati">અંતિમ જવાબ</span>$$ x = \\frac{${dx}}{${d}} = ${x}, \\quad y = \\frac{${dy}}{${d}} = ${y} $$</div>`;
                     }
-                } else if (tool === 'factor') {
-                    let b = parseFloat(document.getElementById('fb').value), c = parseFloat(document.getElementById('fc').value);
+                } 
+                
+                else if (tool === 'factor') {
+                    let b = parseFloat(document.getElementById('fb').value);
+                    let c = parseFloat(document.getElementById('fc').value);
                     if (isNaN(b) || isNaN(c)) throw "Fill all fields.";
-                    res = `<div class="calc-step">Find numbers multiplying to ${c} and adding to ${b}.</div>`;
-                    let f1=null, f2=null;
-                    for(let i=-Math.abs(c)*2; i<=Math.abs(c)*2; i++) {
-                        if(i===0) continue;
-                        if(c%i===0 && (i + (c/i) === b)) { f1=i; f2=c/i; break; }
+                    
+                    res = `<div class="calc-step"><strong>Step 1: Setup</strong><br><span class="gujarati">ગોઠવણી</span><br>Find numbers that multiply to ${c} and add to ${b}.<br><span class="gujarati">એવી સંખ્યાઓ શોધો જેનો ગુણાકાર ${c} અને સરવાળો ${b} થાય.</span></div>`;
+                    
+                    let factor1 = null, factor2 = null;
+                    for(let i = -Math.abs(c)*2; i <= Math.abs(c)*2; i++) {
+                        if(i === 0) continue;
+                        if(c % i === 0) {
+                            let j = c / i;
+                            if(i + j === b) { factor1 = i; factor2 = j; break; }
+                        }
                     }
-                    if(c===0){ f1=0; f2=b; }
-                    if(f1!==null) res += `<div class="calc-step">Numbers are ${f1} and ${f2}.\\[ (x ${f1>=0?'+':'-'} ${Math.abs(f1)})(x ${f2>=0?'+':'-'} ${Math.abs(f2)}) \\]</div>`;
-                    else res += `<div class="calc-step" style="color:red;">Cannot be easily factorized with integers.</div>`;
-                } else if (tool === 'poly') {
-                    let a=parseFloat(document.getElementById('pa').value), b=parseFloat(document.getElementById('pb').value), c=parseFloat(document.getElementById('pc').value), x=parseFloat(document.getElementById('px').value);
-                    if ([a,b,c,x].some(isNaN)) throw "Fill all fields.";
-                    res = `<div class="calc-step"><strong>Substitute x = ${x}</strong>\\[ P(${x}) = ${a}(${x})^2 + ${b}(${x}) + ${c} \\]</div>`;
-                    res += `<div class="calc-step"><strong>Result</strong>\\[ P(${x}) = ${a*(x*x) + b*x + c} \\]</div>`;
-                } else if (tool === 'quadratic') {
-                    let a=parseFloat(document.getElementById('qa').value), b=parseFloat(document.getElementById('qb').value), c=parseFloat(document.getElementById('qc').value);
-                    if ([a,b,c].some(isNaN) || a===0) throw "Valid a (non-zero), b, c required.";
-                    let delta = (b*b)-(4*a*c);
-                    res += `<div class="calc-step"><strong>Step 1: Discriminant \\(\\Delta\\)</strong>\\[ \\\\Delta = (${b})^2 - 4(${a})(${c}) = ${delta} \\]</div>`;
-                    if (delta<0) res += `<div class="calc-step">\\(\\Delta < 0\\): Complex Roots.</div>`;
-                    else if (delta===0) res += `<div class="calc-step">\\(\\Delta = 0\\): Equal Roots.\\[ x = \\\\frac{-(${b})}{2(${a})} = ${-b/(2*a)} \\]</div>`;
-                    else res += `<div class="calc-step">\\(\\Delta > 0\\): Distinct Roots.\\[ x_1 = ${((-b+Math.sqrt(delta))/(2*a)).toFixed(3)}, \\\\quad x_2 = ${((-b-Math.sqrt(delta))/(2*a)).toFixed(3)} \\]</div>`;
-                } else if (tool === 'coord') {
-                    let x1=parseFloat(document.getElementById('cx1').value), y1=parseFloat(document.getElementById('cy1').value), x2=parseFloat(document.getElementById('cx2').value), y2=parseFloat(document.getElementById('cy2').value);
-                    if ([x1,y1,x2,y2].some(isNaN)) throw "Fill all fields.";
-                    res += `<div class="calc-step"><strong>Distance:</strong>\\[ d = \\\\sqrt{(${x2}-${x1})^2 + (${y2}-${y1})^2} = ${(Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2))).toFixed(3)} \\]</div>`;
-                    res += `<div class="calc-step"><strong>Midpoint:</strong>\\[ M = \\\\left(\\\\frac{${x1}+${x2}}{2}, \\\\frac{${y1}+${y2}}{2}\\\\right) = (${(x1+x2)/2}, ${(y1+y2)/2}) \\]</div>`;
-                    res += `<div class="calc-step"><strong>Slope:</strong>\\[ m = \\\\frac{${y2}-${y1}}{${x2}-${x1}} = ${(x2-x1===0)?"Infinity":((y2-y1)/(x2-x1)).toFixed(3)} \\]</div>`;
-                } else if (tool === 'lcm' || tool === 'gcd') {
-                    let n1=parseInt(document.getElementById('num1').value), n2=parseInt(document.getElementById('num2').value);
-                    if (isNaN(n1)||isNaN(n2)||n1===0||n2===0) throw "Non-zero integers required.";
-                    let a=Math.abs(n1), b=Math.abs(n2), oa=a, ob=b;
-                    res += `<div class="calc-step"><strong>Step 1: Euclidean Algorithm for GCD</strong><br>`;
-                    while(b!==0){ let r=a%b; res+=`\\[ ${a} = ${b} \\\\times ${Math.floor(a/b)} + ${r} \\]`; a=b; b=r; }
-                    res += `<strong>GCD = ${a}</strong></div>`;
-                    if (tool==='lcm') res += `<div class="calc-step"><strong>Step 2: Calculate LCM</strong>\\[ LCM = \\\\frac{${oa} \\\\times ${ob}}{${a}} = ${(oa*ob)/a} \\]</div>`;
-                } else if (tool === 'sets') {
-                    let setA = [...new Set(document.getElementById('setA').value.split(',').map(s=>s.trim()).filter(s=>s!==''))];
-                    let setB = [...new Set(document.getElementById('setB').value.split(',').map(s=>s.trim()).filter(s=>s!==''))];
-                    res += `<div class="calc-step"><strong>A \\\\(\\cup\\\\) B (Union):</strong> \\\\{ ${[...new Set([...setA,...setB])].join(', ')} \\\\}</div>`;
-                    res += `<div class="calc-step"><strong>A \\\\(\\cap\\\\) B (Intersection):</strong> \\\\{ ${setA.filter(x=>setB.includes(x)).join(', ')} \\\\}</div>`;
-                    res += `<div class="calc-step"><strong>A - B (Difference):</strong> \\\\{ ${setA.filter(x=>!setB.includes(x)).join(', ')} \\\\}</div>`;
+                    if(c === 0) { factor1 = 0; factor2 = b; }
+
+                    if(factor1 !== null) {
+                        let sign1 = factor1 >= 0 ? '+' : '-';
+                        let sign2 = factor2 >= 0 ? '+' : '-';
+                        res += `<div class="calc-step"><strong>Step 2: Factors Found!</strong><br><span class="gujarati">અવયવો મળ્યા!</span><br>The numbers are ${factor1} and ${factor2}.<br>$$ (x ${sign1} ${Math.abs(factor1)})(x ${sign2} ${Math.abs(factor2)}) $$</div>`;
+                    } else {
+                        res += `<div class="calc-step" style="color:red;">Cannot be easily factorized with integers.<br><span class="gujarati">પૂર્ણાંકો વડે સરળતાથી અવયવ પાડી શકાતા નથી.</span></div>`;
+                    }
                 }
+
+                else if (tool === 'poly') {
+                    let a = parseFloat(document.getElementById('pa').value);
+                    let b = parseFloat(document.getElementById('pb').value);
+                    let c = parseFloat(document.getElementById('pc').value);
+                    let x = parseFloat(document.getElementById('px').value);
+                    if ([a,b,c,x].some(isNaN)) throw "Fill all fields.";
+
+                    let valA = a * (x*x);
+                    let valB = b * x;
+                    let result = valA + valB + c;
+
+                    res = `<div class="calc-step"><strong>Step 1: Substitute x = ${x}</strong><br><span class="gujarati">x = ${x} ની કિંમત મૂકો</span>$$ P(${x}) = ${a}(${x})^2 + ${b}(${x}) + ${c} $$</div>`;
+                    res += `<div class="calc-step"><strong>Step 2: Simplify</strong><br><span class="gujarati">સાદું રૂપ આપો</span>$$ P(${x}) = ${valA} + ${valB} + ${c} = ${result} $$</div>`;
+                }
+
+                else if (tool === 'quadratic') {
+                    let a = parseFloat(document.getElementById('qa').value);
+                    let b = parseFloat(document.getElementById('qb').value);
+                    let c = parseFloat(document.getElementById('qc').value);
+                    if ([a,b,c].some(isNaN) || a===0) throw "Valid 'a' (non-zero), 'b', 'c' required.";
+
+                    let delta = (b*b) - (4*a*c);
+                    res += `<div class="calc-step"><strong>Step 1: Discriminant</strong><br><span class="gujarati">વિવેચક</span>$$ \\Delta = (${b})^2 - 4(${a})(${c}) = ${delta} $$</div>`;
+
+                    if (delta < 0) {
+                        res += `<div class="calc-step">$$ \\Delta < 0 $$ Complex Roots (કાલ્પનિક બીજ).</div>`;
+                    } else if (delta === 0) {
+                        res += `<div class="calc-step">$$ \\Delta = 0 $$ Equal Roots (સમાન બીજ).<br>$$ x = \\frac{-(${b})}{2(${a})} = ${-b/(2*a)} $$</div>`;
+                    } else {
+                        let r1 = (-b + Math.sqrt(delta))/(2*a), r2 = (-b - Math.sqrt(delta))/(2*a);
+                        res += `<div class="calc-step">$$ \\Delta > 0 $$ Distinct Roots (ભિન્ન બીજ).<br>$$ x_1 = ${r1.toFixed(3)}, \\quad x_2 = ${r2.toFixed(3)} $$</div>`;
+                    }
+                }
+
+                else if (tool === 'coord') {
+                    let x1 = parseFloat(document.getElementById('cx1').value);
+                    let y1 = parseFloat(document.getElementById('cy1').value);
+                    let x2 = parseFloat(document.getElementById('cx2').value);
+                    let y2 = parseFloat(document.getElementById('cy2').value);
+                    if ([x1,y1,x2,y2].some(isNaN)) throw "Fill all fields.";
+
+                    let dist = Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
+                    let mx = (x1+x2)/2, my = (y1+y2)/2;
+                    let slope = (x2-x1) === 0 ? "Undefined (Infinity)" : ((y2-y1)/(x2-x1)).toFixed(3);
+
+                    res += `<div class="calc-step"><strong>Distance (અંતર):</strong>$$ d = \\sqrt{(${x2}-${x1})^2 + (${y2}-${y1})^2} = ${dist.toFixed(3)} $$</div>`;
+                    res += `<div class="calc-step"><strong>Midpoint (મધ્યબિંદુ):</strong>$$ M = \\left(\\frac{${x1}+${x2}}{2}, \\frac{${y1}+${y2}}{2}\\right) = (${mx}, ${my}) $$</div>`;
+                    res += `<div class="calc-step"><strong>Slope (ઢાળ):</strong>$$ m = \\frac{${y2}-${y1}}{${x2}-${x1}} = ${slope} $$</div>`;
+                }
+
+                else if (tool === 'lcm' || tool === 'gcd') {
+                    let n1 = parseInt(document.getElementById('num1').value);
+                    let n2 = parseInt(document.getElementById('num2').value);
+                    if (isNaN(n1) || isNaN(n2) || n1===0 || n2===0) throw "Non-zero integers required.";
+                    
+                    let a = Math.abs(n1), b = Math.abs(n2);
+                    let origA = a, origB = b;
+                    
+                    res += `<div class="calc-step"><strong>Step 1: Euclidean Algorithm for GCD</strong><br><span class="gujarati">ગુ.સા.અ. માટે યુક્લિડની રીત</span><br>`;
+                    while(b !== 0) {
+                        let r = a % b;
+                        res += `$$ ${a} = ${b} \\times ${Math.floor(a/b)} + ${r} $$`;
+                        a = b; b = r;
+                    }
+                    let gcd = a;
+                    let lcm = (origA * origB) / gcd;
+                    
+                    res += `<strong>GCD (ગુ.સા.અ.) = ${gcd}</strong></div>`;
+                    if (tool === 'lcm') {
+                        res += `<div class="calc-step"><strong>Step 2: Calculate LCM</strong><br><span class="gujarati">લ.સા.અ. ની ગણતરી</span>$$ LCM = \\frac{${origA} \\times ${origB}}{${gcd}} = ${lcm} $$</div>`;
+                    }
+                }
+
+                else if (tool === 'sets') {
+                    let strA = document.getElementById('setA').value;
+                    let strB = document.getElementById('setB').value;
+                    
+                    let setA = [...new Set(strA.split(',').map(s => s.trim()).filter(s => s !== ''))];
+                    let setB = [...new Set(strB.split(',').map(s => s.trim()).filter(s => s !== ''))];
+                    
+                    let union = [...new Set([...setA, ...setB])];
+                    let intersection = setA.filter(x => setB.includes(x));
+                    let diffAB = setA.filter(x => !setB.includes(x));
+
+                    res += `<div class="calc-step"><strong>Set A:</strong> \\{ ${setA.join(', ')} \\}<br><strong>Set B:</strong> \\{ ${setB.join(', ')} \\}</div>`;
+                    res += `<div class="calc-step"><strong>Union (યોગગણ):</strong><br>Combine all unique elements: \\{ ${union.join(', ')} \\}</div>`;
+                    res += `<div class="calc-step"><strong>Intersection (છેદગણ):</strong><br>Common elements only: \\{ ${intersection.join(', ')} \\}</div>`;
+                    res += `<div class="calc-step"><strong>Difference (તફાવત ગણ) A - B:</strong><br>In A but not in B: \\{ ${diffAB.join(', ')} \\}</div>`;
+                }
+
                 output.innerHTML = res;
                 MathJax.typesetPromise();
+
             } catch (err) {
                 output.innerHTML = `<div style="color:#DC2626; font-weight:bold; padding: 1rem; background:#FEE2E2; border-radius:6px;">Error / ત્રુટિ: ${err}</div>`;
             }
         }
 
+        // --- 4. INITIALIZATION ---
         window.onload = function() {
             renderContent();
             setupLabInputs();
             MathJax.typesetPromise();
-            let count = localStorage.getItem('math_page_visits_v3') || 0;
+
+            let count = localStorage.getItem('math_page_visits_final_v4') || 0;
             count++;
-            localStorage.setItem('math_page_visits_v3', count);
+            localStorage.setItem('math_page_visits_final_v4', count);
             document.getElementById('count').innerText = count;
         };
     </script>
