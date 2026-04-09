@@ -109,7 +109,7 @@
                         <option value="factor">2. Factorization of Trinomials (ત્રિપદીનું અવયવીકરણ)</option>
                         <option value="poly">3. Polynomial Evaluation (બહુપદીની કિંમત)</option>
                         <option value="quadratic">4. Quadratic Equation Roots (દ્વિઘાત સમીકરણના બીજ)</option>
-                        <option value="coord">5. Coordinate Geometry Tools (યામ ભૂમિતિ સાધનો)</option>
+                        <option value="power">5. Power and Index Rules (ઘાત અને ઘાતાંકના નિયમો)</option>
                         <option value="lcm">6. LCM Calculator (લ.સા.અ. કેલ્ક્યુલેટર)</option>
                         <option value="gcd">7. GCD Calculator (ગુ.સા.અ. કેલ્ક્યુલેટર)</option>
                         <option value="sets">8. Concept of Set Operations (ગણ ક્રિયાઓનો ખ્યાલ)</option>
@@ -125,7 +125,7 @@
  <footer>
         <div class="counter">
             Page Visits / પૃષ્ઠ મુલાકાતો: 
-            <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fbrp0587.github.io%2FYOUR-PAGE-NAME&labelColor=%230F172A&countColor=%23A855F7&style=flat" alt="Global Visit Counter" style="vertical-align: middle; margin-left: 8px; height: 20px; border-radius: 4px;">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbrp0587.github.io%2Fmath-prereq&count_bg=%23A855F7&title_bg=%230F172A&icon=&icon_color=%23E7E7E7&title=Visits&edge_flat=true" alt="Global Visit Counter" style="vertical-align: middle; margin-left: 8px; height: 20px; border-radius: 4px;">
         </div>
         <div class="copyright">
             &copy; 2026 Prepared by <strong>Bhavin R Patel</strong><br>
@@ -225,24 +225,24 @@
                 ]
             },
             {
-                title_en: "Coordinate Geometry", title_gu: "યામ ભૂમિતિ",
+                title_en: "Power and Index", title_gu: "ઘાત અને ઘાતાંક",
                 definitions: [
-                    { term_en: "Coordinate Plane", term_gu: "યામ સમતલ", def_en: "A 2D surface formed by an x-axis (horizontal) and a y-axis (vertical) used to plot points algebraically.", def_gu: "x-અક્ષ (આડી) અને y-અક્ષ (ઊભી) દ્વારા રચાતી 2D સપાટી જેનો ઉપયોગ બિંદુઓને બૈજિક રીતે દર્શાવવા થાય છે." },
-                    { term_en: "Distance Formula", term_gu: "અંતર સૂત્ર", def_en: "A mathematical application of the Pythagorean theorem used to find the exact length between two points.", def_gu: "પાયથાગોરસના પ્રમેયનો ગાણિતિક ઉપયોગ જે બે બિંદુઓ વચ્ચેનું ચોક્કસ અંતર શોધવા માટે થાય છે." },
-                    { term_en: "Slope (m)", term_gu: "ઢાળ (m)", def_en: "A number that describes both the direction and the steepness of a line.", def_gu: "એવી સંખ્યા જે રેખાની દિશા અને ઢોળાવ બંનેનું વર્ણન કરે છે." }
+                    { term_en: "Base", term_gu: "આધાર", def_en: "The number that is to be multiplied by itself.", def_gu: "જે સંખ્યાનો પોતાની સાથે ગુણાકાર કરવાનો હોય તે સંખ્યા." },
+                    { term_en: "Index / Exponent", term_gu: "ઘાતાંક", def_en: "The number that indicates how many times the base is multiplied by itself.", def_gu: "આધારનો કેટલી વખત ગુણાકાર કરવો તે દર્શાવતી સંખ્યા." },
+                    { term_en: "Power", term_gu: "ઘાત", def_en: "The final result of multiplying the base by itself index times.", def_gu: "આધારનો ઘાતાંક જેટલી વખત ગુણાકાર કરવાથી મળતું અંતિમ પરિણામ." }
                 ],
-                formula: "$$d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} \\quad , \\quad m = \\frac{y_2 - y_1}{x_2 - x_1}$$",
-                app_en: "GPS navigation logic, mapping software, and computer graphics.", app_gu: "GPS નેવિગેશન લોજિક, મેપિંગ સોફ્ટવેર અને કમ્પ્યુટર ગ્રાફિક્સ.",
+                formula: "$$a^m \\times a^n = a^{m+n} \\quad , \\quad \\frac{a^m}{a^n} = a^{m-n} \\quad , \\quad (a^m)^n = a^{mn}$$",
+                app_en: "Scientific notation for astronomical distances and calculating computer memory sizes.", app_gu: "ખગોળીય અંતર માટે વૈજ્ઞાનિક સંકેત અને કમ્પ્યુટર મેમરી સાઇઝની ગણતરી.",
                 examples: [
-                    { q_en: "Find distance between $(0,0)$ and $(3,4)$", q_gu: "$(0,0)$ અને $(3,4)$ વચ્ચેનું અંતર શોધો",
-                      steps: [{ en: "Apply distance formula.", gu: "અંતરનું સૂત્ર લાગુ કરો.", math: "d = \\sqrt{(3-0)^2 + (4-0)^2}" },
-                              { en: "Calculate the root of the sum of squares.", gu: "વર્ગોના સરવાળાનું વર્ગમૂળ ગણો.", math: "d = \\sqrt{9 + 16} = \\sqrt{25} = 5" }] },
-                    { q_en: "Find midpoint of $(2,4)$ and $(6,8)$", q_gu: "$(2,4)$ અને $(6,8)$ નું મધ્યબિંદુ શોધો",
-                      steps: [{ en: "Average the x and y coordinates.", gu: "x અને y યામની સરેરાશ કાઢો.", math: "M = \\left(\\frac{2+6}{2}, \\frac{4+8}{2}\\right)" },
-                              { en: "Simplify the fractions.", gu: "અપૂર્ણાંકનું સાદું રૂપ આપો.", math: "M = (4, 6)" }] },
-                    { q_en: "Find slope of a line through $(1,2)$ and $(3,6)$", q_gu: "$(1,2)$ અને $(3,6)$ માંથી પસાર થતી રેખાનો ઢાળ શોધો",
-                      steps: [{ en: "Apply slope formula (rise over run).", gu: "ઢાળનું સૂત્ર લાગુ કરો.", math: "m = \\frac{6 - 2}{3 - 1}" },
-                              { en: "Calculate final division.", gu: "અંતિમ ભાગાકાર ગણો.", math: "m = \\frac{4}{2} = 2" }] }
+                    { q_en: "Evaluate: $2^3 \\times 2^4$", q_gu: "કિંમત શોધો: $2^3 \\times 2^4$",
+                      steps: [{ en: "Base is same, add exponents.", gu: "આધાર સમાન છે, ઘાતાંકનો સરવાળો કરો.", math: "2^{3+4}" },
+                              { en: "Calculate the final power.", gu: "અંતિમ ઘાત ગણો.", math: "2^7 = 128" }] },
+                    { q_en: "Simplify: $(3^2)^3$", q_gu: "સાદું રૂપ આપો: $(3^2)^3$",
+                      steps: [{ en: "Multiply the exponents.", gu: "ઘાતાંકનો ગુણાકાર કરો.", math: "3^{2 \\times 3}" },
+                              { en: "Calculate final value.", gu: "અંતિમ કિંમત ગણો.", math: "3^6 = 729" }] },
+                    { q_en: "Evaluate: $\\frac{5^5}{5^3}$", q_gu: "કિંમત શોધો: $\\frac{5^5}{5^3}$",
+                      steps: [{ en: "Base is same, subtract exponents.", gu: "આધાર સમાન છે, ઘાતાંકની બાદબાકી કરો.", math: "5^{5-3}" },
+                              { en: "Calculate the result.", gu: "પરિણામ ગણો.", math: "5^2 = 25" }] }
                 ]
             },
             {
@@ -424,17 +424,12 @@
                         <input type="number" id="qb" placeholder="b" style="width:80px"> x + 
                         <input type="number" id="qc" placeholder="c" style="width:80px"> = 0
                     </div>`;
-            } else if (tool === 'coord') {
+            } else if (tool === 'power') {
                 html = `
                     <div class="eq-row">
-                        <label style="width: 100%;">Point 1 (બિંદુ 1):</label>
-                        X₁: <input type="number" id="cx1" placeholder="x₁" style="width:80px"> 
-                        Y₁: <input type="number" id="cy1" placeholder="y₁" style="width:80px">
-                    </div>
-                    <div class="eq-row">
-                        <label style="width: 100%;">Point 2 (બિંદુ 2):</label>
-                        X₂: <input type="number" id="cx2" placeholder="x₂" style="width:80px"> 
-                        Y₂: <input type="number" id="cy2" placeholder="y₂" style="width:80px">
+                        <label style="width: 100%;">Expression (પદાવલિ): aⁿ</label>
+                        Base (આધાર) a: <input type="number" id="baseA" placeholder="a" style="width:80px">
+                        Exponent (ઘાતાંક) n: <input type="number" id="expN" placeholder="n" style="width:80px">
                     </div>`;
             } else if (tool === 'lcm' || tool === 'gcd') {
                 html = `
@@ -553,20 +548,26 @@
                     }
                 }
 
-                else if (tool === 'coord') {
-                    let x1 = parseFloat(document.getElementById('cx1').value);
-                    let y1 = parseFloat(document.getElementById('cy1').value);
-                    let x2 = parseFloat(document.getElementById('cx2').value);
-                    let y2 = parseFloat(document.getElementById('cy2').value);
-                    if ([x1,y1,x2,y2].some(isNaN)) throw "Fill all fields.";
+                else if (tool === 'power') {
+                    let a = parseFloat(document.getElementById('baseA').value);
+                    let n = parseInt(document.getElementById('expN').value);
+                    if (isNaN(a) || isNaN(n)) throw "Fill all fields. (બધા ક્ષેત્રો ભરો.)";
 
-                    let dist = Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
-                    let mx = (x1+x2)/2, my = (y1+y2)/2;
-                    let slope = (x2-x1) === 0 ? "Undefined (Infinity)" : ((y2-y1)/(x2-x1)).toFixed(3);
+                    let result = Math.pow(a, n);
 
-                    res += `<div class="calc-step"><strong>Distance (અંતર):</strong>$$ d = \\sqrt{(${x2}-${x1})^2 + (${y2}-${y1})^2} = ${dist.toFixed(3)} $$</div>`;
-                    res += `<div class="calc-step"><strong>Midpoint (મધ્યબિંદુ):</strong>$$ M = \\left(\\frac{${x1}+${x2}}{2}, \\frac{${y1}+${y2}}{2}\\right) = (${mx}, ${my}) $$</div>`;
-                    res += `<div class="calc-step"><strong>Slope (ઢાળ):</strong>$$ m = \\frac{${y2}-${y1}}{${x2}-${x1}} = ${slope} $$</div>`;
+                    res += `<div class="calc-step"><strong>Step 1: Understand the Expression</strong><br><span class="gujarati">પદાવલિ સમજો</span>$$ a^n = (${a})^{${n}} $$</div>`;
+
+                    if (n > 0 && n <= 10) {
+                        let expansion = Array(n).fill(a).join(' \\times ');
+                        res += `<div class="calc-step"><strong>Step 2: Expansion</strong><br><span class="gujarati">વિસ્તરણ</span>$$ = ${expansion} $$</div>`;
+                    } else if (n < 0) {
+                        let posN = Math.abs(n);
+                        res += `<div class="calc-step"><strong>Step 2: Negative Exponent Rule</strong><br><span class="gujarati">ઋણ ઘાતાંકનો નિયમ</span>$$ = \\frac{1}{(${a})^{${posN}}} $$</div>`;
+                    } else if (n === 0) {
+                        res += `<div class="calc-step"><strong>Step 2: Zero Exponent Rule</strong><br><span class="gujarati">શૂન્ય ઘાતાંકનો નિયમ</span><br>Any non-zero number to the power of 0 is 1.</div>`;
+                    }
+
+                    res += `<div class="calc-step"><strong>Final Answer (અંતિમ જવાબ):</strong>$$ = ${result} $$</div>`;
                 }
 
                 else if (tool === 'lcm' || tool === 'gcd') {
@@ -622,11 +623,6 @@
             renderContent();
             setupLabInputs();
             MathJax.typesetPromise();
-
-            let count = localStorage.getItem('math_page_visits_final_v6') || 0;
-            count++;
-            localStorage.setItem('math_page_visits_final_v6', count);
-            document.getElementById('count').innerText = count;
         };
     </script>
 </body>
